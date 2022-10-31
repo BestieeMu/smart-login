@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            word-wrap: break-word;
+        }
+        h1{
+         background-image: url(textback.jpg);
+         background-repeat: repeat;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+        font-weight: 800;
+          font-size: 100px;
+          margin-top: 20%;
+        }
+    </style>
+</head>
+<body onload="sayOnTimeOut();">
+    <h1>welcome to the future</h1>
+    <script>
+         function sayOnTimeOut (){
+            setTimeout(welcomeMessage, 3000);
+         }
+    const welcomeMessage = () =>{
+        let textToSpeak = "welcome to the future";
+        let speakData = new SpeechSynthesisUtterance();
+        speakData.volume = 1; // From 0 to 1
+        speakData.rate = 1; // From 0.1 to 10
+        speakData.pitch = 1; // From 0 to 2
+        speakData.text = textToSpeak;
+        speakData.lang = 'en';
+        speechSynthesis.speak(speakData);
+        } 
+    </script>
+</body>
+</html>
